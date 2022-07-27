@@ -1,7 +1,7 @@
 import React from "react";
 import LayoutComponent from "./LayoutComponent";
 
-const LoginComponent = (props) => {
+const SignUpComponent = (props) => {
   return (
     <>
       <LayoutComponent>{props.children}</LayoutComponent>
@@ -9,4 +9,4 @@ const LoginComponent = (props) => {
   );
 };
 
-export default LoginComponent;
+export default SignUpComponent;
