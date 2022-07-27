@@ -7,11 +7,11 @@ const Login = () => {
   let [passwordType, setPasswordType] = useState("password");
 
   const userIdHandler = (e) => {
-    setUserId = e.target.value;
+    setUserId(e.target.value);
   };
 
   const passwordHandler = (e) => {
-    setPassword = e.target.value;
+    setPassword(e.target.value);
   };
 
   const togglePassword = () => {
@@ -20,6 +20,11 @@ const Login = () => {
       return;
     }
     setPasswordType("password");
+  };
+
+  const formSubmitHandler = (e) => {
+    e.preventDefault();
+    console.log("form submission", userId, password);
   };
 
   return (
@@ -36,7 +41,7 @@ const Login = () => {
                 />
               </div>
               <div className="md:w-8/12 lg:w-5/12 lg:ml-20">
-                <form>
+                <form onSubmit={formSubmitHandler}>
                   <div className="mb-6">
                     <input
                       type="text"
@@ -55,7 +60,6 @@ const Login = () => {
 
                     {passwordType === "password" ? (
                       <a
-                        href="#!"
                         className="float-right text-blue-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out"
                         onClick={togglePassword}
                       >
@@ -63,7 +67,6 @@ const Login = () => {
                       </a>
                     ) : (
                       <a
-                        href="#!"
                         className="float-right text-blue-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out"
                         onClick={togglePassword}
                       >
